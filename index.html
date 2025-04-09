@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健康智能卵生数字人</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .slider-container {
+      position: relative;
+      width: 80%;
+      height: 500px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slider-nav {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+    }
+
+    .slider-nav button {
+      width: 10px;
+      height: 10px;
+      border: none;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .slider-nav button.active {
+      background-color: white;
+    }
+
+    .slider-prev,
+    .slider-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(128, 128, 128, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .slider-prev {
+      left: 10px;
+    }
+
+    .slider-next {
+      right: 10px;
+    }
+        /* 回到顶部按钮 */
+        #backToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none; /* 默认不显示 */
+        }
+
+        #backToTop:hover {
+            background-color: #0056b3;
+        }
+
+        /* 左侧目录栏样式 */
+        #leftNav {
+            position: fixed;
+            top: 100px;
+            left: -200px; /* 默认隐藏 */
+            background-color: #333;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+             z-index: 9999;  /* 确保左侧导航栏在所有元素的最上方 */
+            transition: transform 0.3s ease-in-out; /* 目录栏滑动效果 */
+        }
+
+        #leftNav.show {
+            transform: translateX(200px); /* 显示时的滑动效果 */
+        }
+
+        #leftNav a {
+            display: block;
+            margin: 10px 0;
+            color: white; /* 改为白色 */
+            text-decoration: none;
+        }
+
+        #leftNav a:hover {
+            text-decoration: underline;
+        }
+
+        /* 主标题样式 */
+        .project-info h1 {
+            font-size: 3em; /* 增大字体 */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* 添加阴影 */
+        }
+
+        /* 让主标题更加显眼 */
+        .project-info {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 左侧目录栏 -->
+    <div id="leftNav">
+        <a href="#overview">概述</a>
+        <a href="#background">背景</a>
+        <a href="#functions">功能</a>
+        <a href="#team-resources">团队</a>
+        <a href="#team-resources">资源</a>
+    </div>
+
+    <!-- 头部区域 -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo"> <!-- 替换为实际图标 -->
+            </div>
+            <div class="team-name">
+                <span>智慧医生</span>
+            </div>
+        </div>
+        <div class="project-info">
+            <h1>健康智能卵生数字人</h1>
+            <p>一款可以帮您实时监控身体状况的智能助手</p>
+        </div>
+    </header>
+    <div class="slider-container">
+    <div class="slider">
+      <img src="pic1.jpg" alt="Slide 1">
+      <img src="pic1.jpg" alt="Slide 2">
+      <img src="pic1.jpg" alt="Slide 3">
+      <img src="pic1.jpg" alt="Slide 4">
+    </div>
+    <div class="slider-nav">
+      <button class="active"></button>
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+    <button class="slider-prev">&lt;</button>
+    <button class="slider-next">&gt;</button>
+
+  </div>
+    <hr>
+    <!-- 概述区域 -->
+    <section id="overview" class="overview">
+        <div class="overview-content">
+            <img src="pic1.jpg" alt="概述图片"> <!-- 替换为概述图片 -->
+            <div contenteditable="true" class="overview-text">
+                <h2>概述内容</h2>
+                <p>这是一个可以修改的文本区域，您可以自由编辑这个内容。</p>
+            </div>
+        </div>
+    </section>
+    <hr>
+
+    <!-- 背景和盖书区域 -->
+    <section id="background" class="background">
+        <div class="left-text">
+            <h2>背景信息</h2>
+            <p>更多的背景信息可以在这里展示。</p>
+        </div>
+        <div class="right-image">
+            <img src="pic1.jpg" alt="背景图片"> <!-- 替换为背景图片 -->
+        </div>
+    </section>
+    <hr>
+
+    <!-- 功能介绍区域 -->
+    <section id="functions" class="functions-intro">
+        <div class="functions-intro-content">
+            <h2>功能介绍</h2>
+            <p>在这里，您可以了解我们提供的各项功能，帮助您在饮食、运动、健康和穿搭方面获得专业建议。</p>
+        </div>
+    </section>
+
+    <!-- 功能栏区域 -->
+    <section class="functions">
+        <div class="button-group">
+            <button onclick="showFunction('diet')">饮食</button>
+            <button onclick="showFunction('exercise')">运动</button>
+            <button onclick="showFunction('health')">健康</button>
+            <button onclick="showFunction('outfit')">穿搭</button>
+        </div>
+        <div class="function-display">
+            <div id="diet" class="function-content">
+                <h3>饮食</h3>
+                <p>介绍饮食功能。</p>
+                <img src="pic1.jpg" alt="饮食图片">
+            </div>
+            <div id="exercise" class="function-content">
+                <h3>运动</h3>
+                <p>介绍运动功能。</p>
+                <img src="pic1.jpg" alt="运动图片">
+            </div>
+            <div id="health" class="function-content">
+                <h3>健康</h3>
+                <p>介绍健康功能。</p>
+                <img src="pic1.jpg" alt="健康图片">
+            </div>
+            <div id="outfit" class="function-content">
+                <h3>穿搭</h3>
+                <p>介绍穿搭功能。</p>
+                <img src="pic1.jpg" alt="穿搭图片">
+            </div>
+        </div>
+    </section>
+    <hr>
+
+    <!-- 团队和资源区域 -->
+    <section id="team-resources" class="team-resources">
+        <div class="team">
+            <h2>团队</h2>
+            <p>我们的团队介绍。</p>
+            <img src="pic1.jpg" alt="团队图片">
+        </div>
+        <div class="resources">
+            <h2>资源</h2>
+            <p>我们的资源介绍。</p>
+            <img src="pic1.jpg" alt="资源图片">
+        </div>
+    </section>
+
+    <!-- 底部区域 -->
+    <footer>
+        <div class="contact">
+            <h3>联系我们</h3>
+            <p>联系电话：123-456-7890</p>
+        </div>
+        <div class="thanks">
+            <h3>致谢</h3>
+            <p>感谢所有支持我们的朋友。</p>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <button id="backToTop" onclick="scrollToTop()">回到顶部</button>
+
+    <script>
+        // 回到顶部按钮的显示和隐藏
+        window.onscroll = function() {
+            var backToTopButton = document.getElementById("backToTop");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // 功能展示切换
+        function showFunction(functionName) {
+            var contents = document.querySelectorAll('.function-content');
+            contents.forEach(function(content) {
+                content.style.display = 'none';
+            });
+            document.getElementById(functionName).style.display = 'block';
+        }
+
+        // 左侧目录栏滑动显示
+        window.onload = function() {
+            var leftNav = document.getElementById('leftNav');
+            setTimeout(function() {
+                leftNav.classList.add('show'); // 页面加载后左侧导航栏滑动显示
+            }, 1000); // 延时1秒
+        };
+        const slider = document.querySelector('.slider');
+    const slides = document.querySelectorAll('.slider img');
+    const navButtons = document.querySelectorAll('.slider-nav button');
+    const prevButton = document.querySelector('.slider-prev');
+    const nextButton = document.querySelector('.slider-next');
+    let currentIndex = 0;
+
+    function updateSlider() {
+      const offset = -currentIndex * 100;
+      slider.style.transform = `translateX(${offset}%)`;
+
+      navButtons.forEach((button, index) => {
+        if (index === currentIndex) {
+          button.classList.add('active');
+        } else {
+          button.classList.remove('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateSlider();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateSlider();
+    }
+
+    navButtons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        currentIndex = index;
+        updateSlider();
+      });
+    });
+
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide);
+
+    setInterval(nextSlide, 3000);
+    </script>
+</body>
+</html>
