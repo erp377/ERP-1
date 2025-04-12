@@ -1,0 +1,382 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+/* 回到顶部按钮 */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-image: linear-gradient(-225deg, #22E1FF 0%, #1D8FE1 48%, #625EB1 100%);/* 渐变背景 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* 默认不显示 */
+}
+
+#backToTop:hover {
+    background-image: linear-gradient(-225deg, #22E1FF 0%, #1D8FE1 48%, #625EB1 100%); /* 渐变背景 */
+}
+
+/* 左侧目录栏样式 */
+#leftNav {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    background-image: linear-gradient(-225deg, #22E1FF 0%, #1D8FE1 48%, #625EB1 100%); /* 渐变背景 */
+    padding: 20px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+#leftNav a {
+    display: block;
+    margin: 10px 0;
+    color: #007bff;
+    text-decoration: none;
+}
+
+#leftNav a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+header {
+    position: relative;
+    background-image: linear-gradient(60deg, rgba(100, 179, 244, 0.5) 0%, rgba(194, 229, 156, 0.5) 100%);
+    padding: 40px;
+    text-align: left;
+    overflow: hidden;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('header-bg.jpg') no-repeat center center/cover;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.header-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.logo img {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.team-name {
+    margin-left: 10px;
+    font-size: 1.5em;
+    font-family: "ZCOOL KuaiLe", "站酷高粗", sans-serif;
+    color: #112854;
+}
+
+.team-name hr {
+    height: 4px;
+    width: 15%;
+    margin: 10px 0;
+    background-image: linear-gradient(-225deg, #22E1FF 0%, #1D8FE1 48%, #625EB1 100%);
+}
+
+.project-info h1 {
+    font-size: 2.5em;
+    margin-top: 20px;
+    font-family: "ZCOOL KuaiLe", "站酷高粗", sans-serif;
+    font-size: 70px;
+    color: #112854; /* 白金色字体 */
+    text-align: center;
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.5); /* 白金色字体阴影 */
+}
+
+}
+.project-info p {
+    font-size: 1.2em;
+    color: #112854;
+}
+
+/* Overview Section */
+.overview {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.overview-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overview-content img {
+    width: 300px;
+    margin-right: 20px;
+}
+
+.overview-text {
+    width: 50%;
+}
+
+.overview-text h2 {
+    font-size: 2em;
+}
+
+hr {
+    margin-top: 40px;
+    height: 4px;
+    width: 100%;
+    background-image: linear-gradient(-225deg, #22E1FF 0%, #1D8FE1 48%, #625EB1 100%);
+}
+
+/* Background Section */
+.background {
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 130px; /* 增加与左边界的距离 */
+}
+
+.background img {
+    width: 300px;
+}
+
+.left-text h2 {
+    font-size: 2em;
+}
+
+.left-text p {
+    font-size: 1.2em;
+}
+
+/* 移动hr到图片下面 */
+.background hr {
+    margin-top: 40px; /* 确保hr位于图片下方 */
+    height: 4px;
+    width: 100%;
+    background-image: linear-gradient(-225deg, #22E1FF 0%, #1D8FE1 48%, #625EB1 100%);
+}
+
+/* Function Section */
+.functions {
+    padding: 40px 20px;
+
+}
+
+.functions-intro-content {
+    padding-top: 80px;
+    padding-bottom: 10px;
+    padding-left: 130px; /* 增加与左边界的距离 */
+}
+
+.function-intro {
+    text-align: center;
+    margin-bottom: 20px; /* 为功能介绍标题和文字增加间距 */
+}
+.functions-intro h2 {
+    font-size: 2em;
+}
+
+.functions-intro p {
+    font-size: 1.2em;
+}
+
+.function-intro h2 {
+    font-size: 2em;
+}
+
+.function-intro p {
+    font-size: 1.2em;
+}
+
+.button-group {
+    text-align: center;
+    margin-bottom: 30px;
+     padding-left: 60px;
+}
+
+.button-group button {
+    margin: 0 10px;
+    padding: 20px 20px;
+    background-image: linear-gradient(-225deg, #22E1FF 0%, #1D8FE1 48%, #625EB1 100%);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+.button-group button:hover {
+    background-color: #009688;
+}
+
+.function-display {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 60px; /* 增加与左边界的距离 */
+}
+
+.function-content {
+    display: none;
+    text-align: center;
+
+}
+
+.function-content img {
+    width: 200px;
+}
+
+#diet, #exercise, #health, #outfit {
+    display: block;
+}
+
+/* Team and Resources Section */
+.team-resources {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 130px; /* 增加与左边界的距离 */
+}
+
+.team, .resources {
+    width: 45%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.team img, .resources img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+hr {
+    margin-top: 40px;
+    height: 4px;
+    width: 100%;
+    background-image: linear-gradient(-225deg, #22E1FF 0%, #1D8FE1 48%, #625EB1 100%);
+}
+.leftNav {
+    padding-top: 130px; /* 增加与左边界的距离 */
+}
+/* Footer */
+footer {
+    background-image: linear-gradient(-225deg, #22E1FF 0%, #1D8FE1 48%, #625EB1 100%);
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+footer h3 {
+    margin-top: 10px;
+}
+
+footer p {
+    font-size: 1.1em;
+}
+/* 背景信息标题居中放置 */
+#background {
+    text-align: center;
+    padding-top: 20px;  /* 适当的上边距 */
+}
+
+#background .overview-text h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* 四个点的容器，使用flex布局来实现横向排列 */
+.points-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* 各项之间的间隔 */
+    flex-wrap: nowrap;  /* 禁止换行 */
+    min-width: 1000px;  /* 设置一个最小宽度，防止缩放时布局错乱 */
+    margin: 0 auto;  /* 居中 */
+}
+
+/* 每个点的布局 */
+.point-item {
+    flex: 1 1 22%; /* 每个项占 22% 的宽度，并且在必要时可调整 */
+    text-align: center; /* 文字居中 */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* 图片自适应宽度，确保不超过容器宽度 */
+.point-item img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* 使每个项的文字和图片在竖直方向上保持一定的间距 */
+.point-item p {
+    margin-bottom: 10px;
+}
+
+/* 响应式设计：屏幕较小时调整布局 */
+@media (max-width: 768px) {
+    .points-container {
+        flex-direction: column; /* 小屏幕时垂直排列 */
+        align-items: center;    /* 子元素居中 */
+    }
+
+    .point-item {
+        flex: 1 1 100%; /* 每个项占满 100% 宽度 */
+    }
+}
+  body2 {
+            font-family: Arial, sans-serif;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 2em;
+        }
+
+        li {
+            text-indent: -1em;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .text-content {
+            flex: 1;
+        }
+
+        .image-content {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image-content img {
+            max-width: 100%;
+            height: auto;
+        }
