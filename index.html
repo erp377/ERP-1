@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智影随行——AI驱动的全息健康管理孪生数字人系统</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+     /* 容器样式 */
+    .slider-container {
+     position: relative;
+     width: 800px;
+     height: 400px;
+     margin: 20px auto;
+    overflow: hidden;
+    border-radius: 2px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* 轮播图的图片列表 */
+    .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    }
+
+    /* 轮播图中的每张图片样式 */
+    .slider img {
+    width: 100%;  /* 图片宽度填满容器 */
+    height: 100%;  /* 图片高度填满容器 */
+    object-fit: cover;  /* 确保图片按比例覆盖容器 */
+    }
+
+    .slider-nav {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+    }
+
+    .slider-nav button {
+      width: 10px;
+      height: 10px;
+      border: none;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .slider-nav button.active {
+      background-color: white;
+    }
+
+    .slider-prev,
+    .slider-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(128, 128, 128, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .slider-prev {
+      left: 10px;
+    }
+
+    .slider-next {
+      right: 10px;
+    }
+        /* 回到顶部按钮 */
+        #backToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none; /* 默认不显示 */
+        }
+
+        #backToTop:hover {
+            background-color: #0056b3;
+        }
+
+        /* 左侧目录栏样式 */
+        #leftNav {
+            position: fixed;
+            top: 100px;
+            left: -200px; /* 默认隐藏 */
+            background-color: #333;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+             z-index: 9999;  /* 确保左侧导航栏在所有元素的最上方 */
+            transition: transform 0.3s ease-in-out; /* 目录栏滑动效果 */
+        }
+
+        #leftNav.show {
+            transform: translateX(200px); /* 显示时的滑动效果 */
+        }
+
+        #leftNav a {
+            display: block;
+            margin: 10px 0;
+            color: white; /* 改为白色 */
+            text-decoration: none;
+        }
+
+        #leftNav a:hover {
+            text-decoration: underline;
+        }
+
+        /* 主标题样式 */
+        .project-info h1 {
+            font-size: 3em; /* 增大字体 */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* 添加阴影 */
+        }
+
+        /* 让主标题更加显眼 */
+        .project-info {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 左侧目录栏 -->
+    <div id="leftNav">
+        <a href="#overview">概述</a>
+        <a href="#background">背景</a>
+        <a href="#functions">功能</a>
+
+    </div>
+
+    <!-- 头部区域 -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo"> <!-- 替换为实际图标 -->
+            </div>
+            <div class="team-name">
+                <span>智影随行</span>
+            </div>
+        </div>
+        <div class="project-info">
+            <h1>AI驱动的全息健康管理孪生数字人系统</h1>
+            <p>打造专属健康生活助手</p>
+        </div>
+    </header>
+    <div class="slider-container">
+    <div class="slider">
+      <img src="pic1.jpg" alt="Slide 1">
+      <img src="pic2.jpg" alt="Slide 2">
+      <img src="pic3.png" alt="Slide 3">
+    </div>
+    <div class="slider-nav">
+      <button class="active"></button>
+      <button></button>
+      <button></button>
+    </div>
+    <button class="slider-prev">&lt;</button>
+    <button class="slider-next">&gt;</button>
+
+    </div>
+    <hr>
+    <!-- 概述区域 -->
+    <section id="overview" class="overview">
+            <div class="overview-content">
+             <div class="overview-title">
+                 <h2>概述内容</h2>
+            </div>
+            <br>
+            <div contenteditable="true" class="overview-text">
+
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在“健康中国”战略与人工智能技术深度融合的时代背景下，全民健康管理正经历从“被动医疗”向“主动预防”的范式跃迁。当前我国慢性病导致的疾病负担占总负担的70%以上，传统健康管理模式因数据孤岛化、服务同质化等问题，难以满足民众对精准健康管理的迫切需求。</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本项目以“孪生数字人”为核心载体，通过AI、大数据与虚拟现实技术构建覆盖“监测-分析-干预”全链条的智能健康管理系统，既是破解行业瓶颈的革新之举，更是践行“以人民健康为中心”发展理念的战略性工程，为提升全民健康水平提供可落地的技术解决方案。</p>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section id="background" class="background">
+    <!-- 背景信息标题居中 -->
+    <div class="background-title">
+        <h2>背景信息</h2>
+    </div>
+    <br>
+    <!-- 四个点及其内容和图片横向排列 -->
+    <div class="points-container">
+    <!-- 第1点 -->
+    <div class="point-item">
+        <p>①　社会需求</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我国正处于健康管理需求井喷期，而传统人工服务模式受限于成本与覆盖能力，难以满足普惠性需求。</p>
+    </div>
+
+    <!-- 第2点 -->
+    <div class="point-item">
+        <p>②　国家战略要求</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本项目紧密契合《“健康中国2030”规划纲要》中提出的倡导健康生活方式、普及健康知识的要求，也积极响应《国民营养计划（2017—2030年）》中关于共建共享的理念。</p>
+    </div>
+
+    <!-- 第3点 -->
+    <div class="point-item">
+        <p>③　行业现状</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对个性化、精准化的健康管理服务需求日益增长。传统健康管理方式往往存在“一刀切”的问题，无法满足不同个体的多样化需求。</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;面临着数据获取与分析的难题。数字孪生技术在健康管理行业中的应用仍处于起步阶段。</p>
+    </div>
+
+    <!-- 第4点 -->
+    <div class="point-item">
+        <p>④　健康管理-AI协同</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;全球健康管理市场正经历结构性扩张与技术驱动的双重变革。在此过程中，人工智能技术正重塑健康管理服务范式。个性化医疗、远程监测和健康数据分析三大领域成为主要突破方向。</p>
+    </div>
+    </div>
+    </section>
+
+    <hr>
+
+    <!-- 功能介绍区域 -->
+    <section id="functions" class="functions-intro">
+        <div class="function-title">
+             <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;功能介绍</h2>
+        </div>
+        <div class="functions-intro-content">
+            <p>在这里，您可以了解我们提供的各项功能，帮助您在饮食、运动、健康方面获得专业建议。</p>
+        </div>
+    </section>
+
+    <!-- 功能栏区域 -->
+    <section class="functions">
+        <div class="button-group">
+            <button onclick="showFunction('health2')">健康监测</button>
+            <button onclick="showFunction('diet')">饮食分析</button>
+            <button onclick="showFunction('exercise')">运动监控</button>
+            <button onclick="showFunction('health')">医疗监护</button>
+            <button onclick="showFunction('outfit')">社区互助</button>
+        </div>
+        <div class="function-display">
+            <div id="health2" class="function-content">
+                <h3>健康监测</h3>
+                <ul class="list-disc pl-5 space-y-2">
+            <li class="text-gray-700">生成健康周报</li>
+            <li class="text-gray-700">生成孪生数字人</li>
+            <li class="text-gray-700">可视化用户健康数据</li>
+        </ul>
+                <img src="pic8.jpg" alt="健康图片" width="100" height="160">
+                <img src="pic9.jpg" alt="健康图片" width="100" height="160" >
+            </div>
+            <div id="diet" class="function-content">
+                <h3>饮食分析</h3>
+                <ul class="list-disc pl-5 space-y-2">
+            <li class="text-gray-700">识别餐食图像</li>
+            <li class="text-gray-700">计算营养含量</li>
+            <li class="text-gray-700">定制个性化营养食谱</li>
+        </ul>
+                <img src="pic11.png" alt="饮食图片" width="300" height="160">
+            </div>
+            <div id="exercise" class="function-content">
+                <h3>运动监控</h3>
+                <ul class="list-disc pl-5 space-y-2">
+            <li class="text-gray-700">实时运动陪伴</li>
+            <li class="text-gray-700">提供个性化运动方案</li>
+            <li class="text-gray-700">监测热量消耗与提供建议</li>
+        </ul>
+                <img src="pic12.png" alt="运动图片" width="200" height="160">
+            </div>
+            <div id="health" class="function-content">
+                <h3>医疗检测</h3>
+                <ul class="list-disc pl-5 space-y-2">
+            <li class="text-gray-700">智能提醒</li>
+            <li class="text-gray-700">记录用户医疗信息</li>
+            <li class="text-gray-700">实时监测健康数据</li>
+        </ul>
+                <img src="pic10.png" alt="健康图片" width="200" height="160">
+            </div>
+            <div id="outfit" class="function-content">
+                <h3>社区互助</h3>
+                <ul class="list-disc pl-5 space-y-2">
+            <li class="text-gray-700">匹配智能兴趣小组</li>
+            <li class="text-gray-700">解锁成就勋章与兑换积分</li>
+            <li class="text-gray-700">发布健康挑战任务与追踪进度</li>
+        </ul>
+                <img src="pic13.png" alt="穿搭图片" width="200" height="160">
+            </div>
+        </div>
+    </section>
+    <hr>
+
+    <!-- 团队和资源区域 -->
+    <section id="team-container" class="team-container">
+        <div class="team-title">
+             <h2>成果展示</h2>
+        </div>
+        <br>
+        <div class="team">
+            <video class="team-video" controls>
+                <source src="团队视频.mp4" type="video/mp4">
+                你的浏览器不支持视频播放。
+            </video>
+        </div>
+<!--        <body>-->
+<!--    <div class="section">-->
+<!--        <div class="text-content">-->
+<!--            <h2>规划</h2>-->
+<!--            <p>技术方面，将持续深化数据融合与智能升级。</p>-->
+<!--            <ul>-->
+<!--                <li>·进行多维度数据整合</li>-->
+<!--                <li>·孪生数字人技术迭代</li>-->
+<!--                <li>·算法优化与跨领域迁移</li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--        <div class="image-content">-->
+<!--            <img src="pic111.png" alt="技术方面图片">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="section">-->
+<!--        <div class="text-content">-->
+<!--            <p>市场方面，将聚焦于分层拓展与生态构建。</p>-->
+<!--            <ul>-->
+<!--                <li>·实行用户分层运营</li>-->
+<!--                <li>·构建“硬件 + 服务”生态</li>-->
+<!--                <li>·进行全球化布局</li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--        <div class="image-content">-->
+<!--            <img src="pic15.png" alt="市场方面图片">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="section">-->
+<!--        <div class="text-content">-->
+<!--            <p>产品方面，将关注场景深耕与用户体验升级。</p>-->
+<!--            <ul>-->
+<!--                <li>·实现垂直场景功能拓展</li>-->
+<!--                <li>·实现交互体验优化</li>-->
+<!--                <li>·推进跨领域合作与标准建设</li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--        <div class="image-content">-->
+<!--            <img src="pic16.png" alt="产品方面图片">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</body>-->
+    </section>
+
+    <!-- 底部区域 -->
+    <footer>
+        <div class="contact">
+            <h3>联系我们</h3>
+            <p>联系电话：15977826542</p>
+        </div>
+        <div class="thanks">
+            <h3>致谢</h3>
+            <p>感谢所有支持我们的朋友。</p>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <button id="backToTop" onclick="scrollToTop()">回到顶部</button>
+
+    <script>
+        // 回到顶部按钮的显示和隐藏
+        window.onscroll = function() {
+            var backToTopButton = document.getElementById("backToTop");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // 功能展示切换
+        function showFunction(functionName) {
+            var contents = document.querySelectorAll('.function-content');
+            contents.forEach(function(content) {
+                content.style.display = 'none';
+            });
+            document.getElementById(functionName).style.display = 'block';
+        }
+
+        // 左侧目录栏滑动显示
+        window.onload = function() {
+            var leftNav = document.getElementById('leftNav');
+            setTimeout(function() {
+                leftNav.classList.add('show'); // 页面加载后左侧导航栏滑动显示
+            }, 1000); // 延时1秒
+        };
+        const slider = document.querySelector('.slider');
+    const slides = document.querySelectorAll('.slider img');
+    const navButtons = document.querySelectorAll('.slider-nav button');
+    const prevButton = document.querySelector('.slider-prev');
+    const nextButton = document.querySelector('.slider-next');
+    let currentIndex = 0;
+
+    function updateSlider() {
+      const offset = -currentIndex * 100;
+      slider.style.transform = `translateX(${offset}%)`;
+
+      navButtons.forEach((button, index) => {
+        if (index === currentIndex) {
+          button.classList.add('active');
+        } else {
+          button.classList.remove('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateSlider();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateSlider();
+    }
+
+    navButtons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        currentIndex = index;
+        updateSlider();
+      });
+    });
+
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide);
+
+    setInterval(nextSlide, 3000);
+    </script>
+</body>
+</html>
